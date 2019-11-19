@@ -12,4 +12,5 @@ int    main()
     }
   printf("the   amount  is  :%d\n",count);
   return    0;  
+
 }
