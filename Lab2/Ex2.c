@@ -22,3 +22,4 @@
      printf("the    amount  is  :%d\n");
      return     0;
  }
+ 
