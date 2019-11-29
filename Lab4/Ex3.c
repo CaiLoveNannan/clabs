@@ -1,5 +1,5 @@
-#include <studio.h>
-#include <math.h>       /* for atof()                               */
+#include <stdio.h>
+#include <math.h>               /* for atof()                       */
 
 #define     MAXOP       100     /* MAX SIZE OF OPERAND OR OPERATOR  */
 #define     NUMBER      '0'     /* signal that a number was found   */
@@ -15,7 +15,7 @@ main()
     double   op2;
     char    s[MAXOP];
 
-    while ((type = getop(s)) ! = EDF) {
+    while ((type = getop(s)) != EOF) {
         switch (type){
             case NUMBER:
                  push(atof(s));
@@ -31,14 +31,14 @@ main()
                 break;
             case '/':
             op2 = pop();
-                if (op2 ! = 0.0)
+                if (op2 != 0.0)
                      push(pop() / op2);
                 else 
                     printf("error: zero divisor\n");
                     break;
             case '%':
                 op2 = pop();
-                if (op2 ! = 0.0)
+                if (op2 != 0.0)
                      push(fmod(pop(),op2));
                 else
                      printf("error: zero divisor\n");
